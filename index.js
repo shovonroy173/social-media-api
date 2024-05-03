@@ -10,6 +10,7 @@ const path = require("path");
 const authRouter = require("./route/authRouter");
 const userRouter = require("./route/userRouter");
 const postRouter = require("./route/postRouter");
+const commentRouter = require("./route/commentRouter");
 
 const app = express();
 app.use(cors());
@@ -55,6 +56,7 @@ app.post("/upload" , upload.single("file") , async(req , res)=>{
 app.use("/api/auth" , authRouter);
 app.use("/api/user" , userRouter);
 app.use("/api/post" , postRouter);
+app.use("/api/comment" , commentRouter);
 
 
 // port connection
